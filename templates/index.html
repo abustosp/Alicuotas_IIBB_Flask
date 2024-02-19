@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Buscador de Alícuotas de Impuestos</title>
+    
 </head>
 <body>
     <h1>Buscador de Alícuotas de Impuestos</h1>
     <form method="post">
         <label>Provincia:</label><br>
+        <div class="column">
         <input type="checkbox" name="Provincia" value="Buenos Aires"> Buenos Aires<br>
         <input type="checkbox" name="Provincia" value="Catamarca"> Catamarca<br>
         <input type="checkbox" name="Provincia" value="Chaco"> Chaco<br>
@@ -18,6 +20,8 @@
         <input type="checkbox" name="Provincia" value="Corrientes"> Corrientes<br>
         <input type="checkbox" name="Provincia" value="Cordoba"> Cordoba<br>
         <input type="checkbox" name="Provincia" value="Entre Rios"> Entre Rios<br>
+        </div>
+        <div class="column">
         <input type="checkbox" name="Provincia" value="Formosa"> Formosa<br>
         <input type="checkbox" name="Provincia" value="Jujuy"> Jujuy<br>
         <input type="checkbox" name="Provincia" value="La Pampa"> La Pampa<br>
@@ -26,6 +30,8 @@
         <input type="checkbox" name="Provincia" value="Misiones"> Misiones<br>
         <input type="checkbox" name="Provincia" value="Neuquen"> Neuquen<br>
         <input type="checkbox" name="Provincia" value="Rio Negro"> Rio Negro<br>
+        </div>
+        <div class="column">
         <input type="checkbox" name="Provincia" value="Salta"> Salta<br>
         <input type="checkbox" name="Provincia" value="San Juan"> San Juan<br>
         <input type="checkbox" name="Provincia" value="San Luis"> San Luis<br>
@@ -34,11 +40,12 @@
         <input type="checkbox" name="Provincia" value="Santiago del Estero"> Santiago del Estero<br>
         <input type="checkbox" name="Provincia" value="Tierra del Fuego"> Tierra del Fuego<br>
         <input type="checkbox" name="Provincia" value="Tucuman"> Tucuman<br>
+        </div>
         <!-- Añade más Provincia según sea necesario -->
 
-        <br><br>
+        <br style="clear:both;"><br>
 
-        <label>Código de Actividades:</label><br>
+        <label>Código de Actividades (separadas por coma):</label><br>
         <input type="text" name="Codigo" required><br>
 
         <br><br>
