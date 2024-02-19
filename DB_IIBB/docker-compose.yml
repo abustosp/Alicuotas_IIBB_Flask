@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  db_iibb:
+    image: postgres:14-alpine
+    container_name:  db_iibb
+    ports:
+      - 5001:5432
+    volumes:
+      - ./postgresData:/var/lib/postgresql/data
+    env_file:
+      - postgres.env
+    restart: unless-stopped
+
