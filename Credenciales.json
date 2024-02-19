@@ -1,0 +1,7 @@
+{
+    "dbname": "db_iibb",
+    "user": "Admin",
+    "password": "Password",
+    "host": "localhost",
+    "port": "5001"
+}
