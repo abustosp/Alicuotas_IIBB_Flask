@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Buscador de Alícuotas de Impuestos</title>
+</head>
+<body>
+    <h1>Buscador de Alícuotas de Impuestos</h1>
+    <form method="post">
+        <label>Provincia:</label><br>
+        <input type="checkbox" name="Provincia" value="Buenos Aires"> Buenos Aires<br>
+        <input type="checkbox" name="Provincia" value="Catamarca"> Catamarca<br>
+        <input type="checkbox" name="Provincia" value="Chaco"> Chaco<br>
+        <input type="checkbox" name="Provincia" value="Chubut"> Chubut<br>
+        <input type="checkbox" name="Provincia" value="Ciudad Autonoma de Buenos Aires"> Ciudad Autonoma de Buenos Aires<br>
+        <input type="checkbox" name="Provincia" value="Corrientes"> Corrientes<br>
+        <input type="checkbox" name="Provincia" value="Cordoba"> Cordoba<br>
+        <input type="checkbox" name="Provincia" value="Entre Rios"> Entre Rios<br>
+        <input type="checkbox" name="Provincia" value="Formosa"> Formosa<br>
+        <input type="checkbox" name="Provincia" value="Jujuy"> Jujuy<br>
+        <input type="checkbox" name="Provincia" value="La Pampa"> La Pampa<br>
+        <input type="checkbox" name="Provincia" value="La Rioja"> La Rioja<br>
+        <input type="checkbox" name="Provincia" value="Mendoza"> Mendoza<br>
+        <input type="checkbox" name="Provincia" value="Misiones"> Misiones<br>
+        <input type="checkbox" name="Provincia" value="Neuquen"> Neuquen<br>
+        <input type="checkbox" name="Provincia" value="Rio Negro"> Rio Negro<br>
+        <input type="checkbox" name="Provincia" value="Salta"> Salta<br>
+        <input type="checkbox" name="Provincia" value="San Juan"> San Juan<br>
+        <input type="checkbox" name="Provincia" value="San Luis"> San Luis<br>
+        <input type="checkbox" name="Provincia" value="Santa Cruz"> Santa Cruz<br>
+        <input type="checkbox" name="Provincia" value="Santa Fe"> Santa Fe<br>
+        <input type="checkbox" name="Provincia" value="Santiago del Estero"> Santiago del Estero<br>
+        <input type="checkbox" name="Provincia" value="Tierra del Fuego"> Tierra del Fuego<br>
+        <input type="checkbox" name="Provincia" value="Tucuman"> Tucuman<br>
+        <!-- Añade más Provincia según sea necesario -->
+
+        <br><br>
+
+        <label>Código de Actividades:</label><br>
+        <input type="text" name="Codigo" required><br>
+
+        <br><br>
+
+        <input type="submit" value="Buscar">
+    </form>
+
+    {% if resultados %}
+        <h2>Resultados:</h2>
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Actividad</th>
+                <th>Alícuota</th>
+                <th>Comentarios</th>
+                <th>Provincia</th>
+
+            </tr>
+            {% for resultado in resultados %}
+                <tr>
+                    <td>{{ resultado[0] }}</td>
+                    <td>{{ resultado[1] }}</td>
+                    <td>{{ resultado[2] }}</td>
+                    <td>{{ resultado[3] }}</td>
+                    <td>{{ resultado[4] }}</td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
