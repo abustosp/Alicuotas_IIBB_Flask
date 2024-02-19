@@ -22,6 +22,9 @@ def index():
         Provincia = request.form.getlist('Provincia')
         Codigo = request.form['Codigo']
         
+        # Separar el codigo por comas, aplicar un trim y convertir a una tupla
+        Codigo = tuple([i.strip() for i in Codigo.split(',')])
+        
         # Transformar la lista de provincias en una tupla
         Provincia = tuple(Provincia)
         print(Provincia)
@@ -32,7 +35,7 @@ def index():
             cursor = conn.cursor()
             cursor.execute('''SELECT * FROM alicuotas_impuestos 
                            WHERE "Provincia" IN %s
-                           AND "Codigo" = %s''', 
+                           AND "Codigo" IN %s''', 
                            ( 
                             Provincia, 
                             #Provincias_Hardcodeadas,
