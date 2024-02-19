@@ -2,6 +2,6 @@
     "dbname": "db_iibb",
     "user": "Admin",
     "password": "Password",
-    "host": "localhost",
-    "port": "5001"
+    "host": "db_iibb",
+    "port": "5432"
 }
