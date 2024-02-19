@@ -1,6 +1,15 @@
 version: '3.9'
 
 services:
+  flask_iibb:
+    image: abustosp/iibb-alic:0.4
+    container_name:  flask_iibb
+    ports:
+      - 5100:5000
+    depends_on:
+      - db_iibb
+    restart: unless-stopped
+
   db_iibb:
     image: postgres:14-alpine
     container_name:  db_iibb
@@ -11,4 +20,6 @@ services:
     env_file:
       - postgres.env
     restart: unless-stopped
+
+
 
